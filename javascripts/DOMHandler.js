@@ -1,5 +1,6 @@
 // Variable to hold the final price. Default to 0.
 var finalSandwichPrice = 0;
+var finalSandwichEl = document.getElementById("finalSandwich"); //PH
 
 // Variable to hold topping that the user selects
 var selectedTopping;
@@ -18,4 +19,6 @@ meatChooser.addEventListener("change", function(event) {
   // Determine the price of the topping chosen
 
   // Add the topping to the SandwichMaker to increase the total price
+
+  finalSandwichEl.innerHTML += "<p>" + selectedTopping + "</p>"; //PH
 });
