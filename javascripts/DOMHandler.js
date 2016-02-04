@@ -27,7 +27,7 @@ meatChooser.addEventListener("change", function(event) {
 	  // Add the topping to the SandwichMaker to increase the total price
 	  SandwichMaker.addTopping(meatPrice);
 
-	  finalSandwichEl.innerHTML += "<p>" + selectedTopping + "</p>"; //PH
+	  finalSandwichEl.innerHTML += `<p>$${meatPrice} ${selectedTopping} </p>`;
 	};
 });
 
@@ -37,7 +37,7 @@ veggieChooser.addEventListener("change", function(event) {
   if (selectedTopping !== 'None') {
 	  var veggiePrice = SandwichMaker.addVeggie(selectedTopping);
 	  SandwichMaker.addTopping(veggiePrice);
-	  finalSandwichEl.innerHTML += "<p>" + selectedTopping + "</p>"; //PH
+	  finalSandwichEl.innerHTML += `<p>$${veggiePrice} ${selectedTopping} </p>`;
   };
 });
 
