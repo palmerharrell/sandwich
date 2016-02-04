@@ -17,23 +17,27 @@ var breadChooser = document.getElementById("bread-chooser");
   and get the value of the topping from your augmented IIFE
 */
 meatChooser.addEventListener("change", function(event) {
-  // Get the value chosen from the DOM
-  selectedTopping = event.target.value;
+  if (selectedTopping !== 'None') {
+	  // Get the value chosen from the DOM
+	  selectedTopping = event.target.value;
 
-  // Determine the price of the topping chosen
-  var meatPrice = SandwichMaker.addMeat(selectedTopping);
+	  // Determine the price of the topping chosen
+	  var meatPrice = SandwichMaker.addMeat(selectedTopping);
 
-  // Add the topping to the SandwichMaker to increase the total price
-  SandwichMaker.addTopping(meatPrice);
+	  // Add the topping to the SandwichMaker to increase the total price
+	  SandwichMaker.addTopping(meatPrice);
 
-  finalSandwichEl.innerHTML += "<p>" + selectedTopping + "</p>"; //PH
+	  finalSandwichEl.innerHTML += "<p>" + selectedTopping + "</p>"; //PH
+	};
 });
 
 // Veggies
 veggieChooser.addEventListener("change", function(event) {
   selectedTopping = event.target.value;
-  var veggiePrice = SandwichMaker.addVeggie(selectedTopping);
-  SandwichMaker.addTopping(veggiePrice);
-  finalSandwichEl.innerHTML += "<p>" + selectedTopping + "</p>"; //PH
+  if (selectedTopping !== 'None') {
+	  var veggiePrice = SandwichMaker.addVeggie(selectedTopping);
+	  SandwichMaker.addTopping(veggiePrice);
+	  finalSandwichEl.innerHTML += "<p>" + selectedTopping + "</p>"; //PH
+  };
 });
 
