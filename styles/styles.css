@@ -7,11 +7,12 @@ label, .bold {
 	font-weight: bold;
 }
 
-#finalSandwich, .choices {
+#finalSandwich, #finalPrice, .choices {
 	float: left;
 	border: 2px solid royalblue;
 	margin: 5px;
 	padding: 0 5px;
+	width: 20%;
 }
 
 .choices {
